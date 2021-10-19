@@ -109,14 +109,14 @@ export class CalculatorComponent implements OnInit {
 
   }
 
-  handleClick(value: string | number): void {
+  handleClickEvent(value: string | number): void {
     if (typeof value === 'number') {
       this.handleNumber(value);
 
     } else if (typeof value === 'string') {
       this.handleSymbol(value);
     }
-    
+
   }
 
 }

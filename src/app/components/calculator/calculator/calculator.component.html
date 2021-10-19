@@ -1,4 +1,8 @@
-<table >
-         <tr><app-display [myDisplay]="display"></app-display></tr>
-         <app-keyboard (onClick)="handleClick($event)" ></app-keyboard>
-      </table>
+<div class="container mt-3">
+   <table>
+      <tr>
+         <app-display [myDisplay]="display"></app-display>
+      </tr>
+      <app-keyboard (onClick)="handleClickEvent($event)"></app-keyboard>
+   </table>
+</div>
