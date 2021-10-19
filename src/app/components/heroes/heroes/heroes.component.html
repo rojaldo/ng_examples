@@ -1,11 +1,5 @@
 <div class="container">
-    <div class="form-group">
-        <label for="">Nombre</label>
-        <input type="text" class="form-control mb-3" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="newHeroName">
-    </div>
-    <button type="button" class="btn btn-primary" (click)="addHero()">Añadir</button>
-    <ul class="list-group mt-5">
-        <li class="list-group-item" *ngFor="let hero of heroes">{{hero}}</li>
-    </ul>
+    <app-hero-form (onHeroAdd)="addHero($event)"></app-hero-form>
+    <app-hero-list [myHeroes]="heroes"></app-hero-list>
 
 </div>
