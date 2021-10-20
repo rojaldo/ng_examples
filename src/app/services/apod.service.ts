@@ -7,9 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class ApodService {
 
+  API_KEY = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
+
   constructor(private http: HttpClient) { }
 
-  getApod(date?: string): Observable<any> {
-    return this.http.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`);
+  getApod(date?: string): Observable<any>{
+
+    if (date !== undefined) {
+      return this.http.get(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=${this.API_KEY}`);
+    } else {
+      return this.http.get(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}`);
+    }
   }
 }
