@@ -12,12 +12,16 @@ import { CalculatorService } from 'src/app/services/calculator.service';
 export class CalculatorComponent implements OnInit, OnDestroy {
 
   display = '';
+  sub: any;
 
-  constructor(private service: CalculatorService) { }
+  constructor(private service: CalculatorService) {
+    
+  }
 
 
   ngOnInit(): void {
-    this.service.display$.subscribe(
+    console.log('CalculatorComponent');
+    this.sub = this.service.display$.subscribe(
       (value: string) => {
         this.display = value;
       },
@@ -25,11 +29,11 @@ export class CalculatorComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
-
   }
 
   ngOnDestroy(): void {
-    this.service.display$.unsubscribe();
+    console.log('CalculatorComponent destroyed');
+    this.sub.unsubscribe();
   }
 
   handleClickEvent(value: string | number): void {
