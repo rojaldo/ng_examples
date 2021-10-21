@@ -1,18 +1,33 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ApodService } from 'src/app/services/apod.service';
 
 @Component({
   selector: 'app-show-apod',
   templateUrl: './show-apod.component.html',
   styleUrls: ['./show-apod.component.scss']
 })
-export class ShowApodComponent implements OnInit {
+export class ShowApodComponent implements OnInit, OnChanges {
 
-  @Input() data: any = {};
+  @Input() selectedDate!: string;
+  
+  data: any = {};
 
-  constructor() { }
+  constructor(private service: ApodService) { }
 
   ngOnInit(): void {
+
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    if(changes.selectedDate.currentValue){
+      this.service.getApod(changes.selectedDate.currentValue).subscribe(data => {
+        this.data = data;
+      });
+    }
+    
+  }
+
 
   //get video id from url
   getVideoId(): string {

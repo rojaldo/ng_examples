@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApodService } from 'src/app/services/apod.service';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-apod',
@@ -13,10 +14,13 @@ export class ApodComponent implements OnInit {
 
   apiLoaded = false;
 
+  // get today date with momentjs in format YYYY-MM-DD
+  dateString = moment().format('YYYY-MM-DD');
+
   date: { year: number; month: number; } | undefined;
   sub: any;
 
-  constructor(private service:ApodService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
@@ -29,27 +33,11 @@ export class ApodComponent implements OnInit {
       this.apiLoaded = true;
     }
 
-    this.service.getApod().subscribe(
-      (data) => {
-        console.log(data);
-        this.apodData = data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
   }
 
   handleDate(dateString: string) {
-    this.sub = this.service.getApod(dateString).subscribe(
-      (data) => {
-        console.log(data);
-        this.apodData = data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+    this.dateString = dateString;
+
   }
 
 
