@@ -13,7 +13,6 @@ export class ApodComponent implements OnInit {
 
   apiLoaded = false;
 
-  selectedDate: NgbDateStruct = {year: new Date().getFullYear(), month: new Date().getMonth()+1, day: new Date().getDate()};
   date: { year: number; month: number; } | undefined;
   sub: any;
 
@@ -41,9 +40,8 @@ export class ApodComponent implements OnInit {
     )
   }
 
-  handleDate() {
-   
-    this.sub = this.service.getApod(this.selectedDate.year+'-'+this.selectedDate.month+'-'+this.selectedDate.day).subscribe(
+  handleDate(dateString: string) {
+    this.sub = this.service.getApod(dateString).subscribe(
       (data) => {
         console.log(data);
         this.apodData = data;
@@ -54,12 +52,5 @@ export class ApodComponent implements OnInit {
     )
   }
 
-  //get video id from url
-  //https://www.youtube.com/watch?v=<VIDEO_ID>
-  getVideoId(): string {
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-    var match = this.apodData.url.match(regExp);
-    return (match&&match[7].length==11)? match[7] : false;
-  }
 
 }

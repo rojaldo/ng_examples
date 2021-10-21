@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApodService {
 
   API_KEY = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';

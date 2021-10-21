@@ -1,15 +1,5 @@
 <div class="container">
-    <ngb-datepicker #dp [(ngModel)]="selectedDate" (dateSelect)="handleDate()"></ngb-datepicker>
-    <div class="jumbotron">
-        <h1 class="display-3">{{apodData.title}}</h1>
-        <p class="lead">{{apodData.date}}</p>
-        <img *ngIf="apodData.media_type === 'image'" [src]="apodData.url" alt="" class="d-block mx-auto w-100">
-        <youtube-player *ngIf="apodData.media_type === 'video'" [videoId]="getVideoId()" class="d-block mx-auto"></youtube-player>
-        <hr class="my-2">
-        <p>{{apodData.explanation}}</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" [href]="apodData.hdurl" role="button">Descargar</a>
-        </p>
-    </div>
+    <app-date-apod (onDateSelected)="handleDate($event)"></app-date-apod>
+    <app-show-apod [data]="apodData"></app-show-apod>
 
 </div>

@@ -1,9 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Hero } from '../model/hero';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HeroesService {
 
   private heroes = [

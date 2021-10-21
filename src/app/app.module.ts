@@ -14,6 +14,10 @@ import { HeroFormComponent } from './components/heroes/hero-form/hero-form.compo
 import { ApodComponent } from './components/apod/apod/apod.component';
 import { HttpClientModule } from '@angular/common/http';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { HeroesService } from './services/heroes.service';
+import { ApodService } from './services/apod.service';
+import { ShowApodComponent } from './components/apod/show-apod/show-apod.component';
+import { DateApodComponent } from './components/apod/date-apod/date-apod.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     HeroesComponent,
     HeroListComponent,
     HeroFormComponent,
-    ApodComponent
+    ApodComponent,
+    ShowApodComponent,
+    DateApodComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     HttpClientModule,
     YouTubePlayerModule
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, HeroesService, ApodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
