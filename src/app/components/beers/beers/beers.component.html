@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3  mt-3" *ngFor="let beer of data">
+            <div class="card h-100">
+                <img class="card-img-top mx-auto" [src]="beer.image_url" alt="" style="width: 60px">
+                <div class="card-body">
+                    <h4 class="card-title">{{beer.name}}</h4>
+                    <h5>{{beer.abv | abv : 'es'}}</h5>
+                    <p class="card-text">{{beer.tagline}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

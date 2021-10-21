@@ -18,6 +18,9 @@ import { HeroesService } from './services/heroes.service';
 import { ApodService } from './services/apod.service';
 import { ShowApodComponent } from './components/apod/show-apod/show-apod.component';
 import { DateApodComponent } from './components/apod/date-apod/date-apod.component';
+import { BeersComponent } from './components/beers/beers/beers.component';
+import { BeerService } from './services/beer.service';
+import { AbvPipe } from './pipes/abv.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { DateApodComponent } from './components/apod/date-apod/date-apod.compone
     HeroFormComponent,
     ApodComponent,
     ShowApodComponent,
-    DateApodComponent
+    DateApodComponent,
+    BeersComponent,
+    AbvPipe
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { DateApodComponent } from './components/apod/date-apod/date-apod.compone
     HttpClientModule,
     YouTubePlayerModule
   ],
-  providers: [CalculatorService, HeroesService, ApodService],
+  providers: [CalculatorService, HeroesService, ApodService, BeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -75,7 +75,7 @@ export class CalculatorService {
 
         break;
       case State.FirstFigure:
-        if(value === '+' || value === '-' || value === '*' || value === '/') {
+        if (value === '+' || value === '-' || value === '*' || value === '/') {
           this.operator = value;
           this.currentState = State.SecondFigure;
           this.display += value;
@@ -83,7 +83,7 @@ export class CalculatorService {
         }
         break;
       case State.SecondFigure:
-        if(value === '='){
+        if (value === '=') {
           this.result = this.calculate();
           this.currentState = State.Result;
           this.display += value + this.result.toString();
@@ -91,7 +91,7 @@ export class CalculatorService {
         }
         break;
       case State.Result:
-        if(value === '+' || value === '-' || value === '*' || value === '/') {
+        if (value === '+' || value === '-' || value === '*' || value === '/') {
           this.firstFigure = this.result;
           this.operator = value;
           this.secondFigure = 0;
@@ -106,6 +106,10 @@ export class CalculatorService {
         break;
     }
 
+
   }
 
+  getDisplay(): string {
+    return this.display;
+  }
 }

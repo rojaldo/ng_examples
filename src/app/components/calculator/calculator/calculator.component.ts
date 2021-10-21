@@ -29,6 +29,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
+    this.display = this.service.getDisplay();
   }
 
   ngOnDestroy(): void {
