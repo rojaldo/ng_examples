@@ -26,7 +26,10 @@ import { FormComponent } from './components/form/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveComponent } from './components/form/reactive/reactive.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'; // CLI imports AppRoutingModule
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TrivialComponent } from './components/trivial/trivial/trivial.component';
+import { CardComponent } from './components/trivial/card/card.component'; // CLI imports AppRoutingModule
+import { TrivialService } from './services/trivial.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AbvPipe,
     FormComponent,
     ReactiveComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TrivialComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AppRoutingModule
 
   ],
-  providers: [CalculatorService, HeroesService, ApodService, BeerService],
+  providers: [CalculatorService, HeroesService, ApodService, BeerService, TrivialService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

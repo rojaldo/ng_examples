@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BeerService } from 'src/app/services/beer.service';
 
@@ -10,7 +11,8 @@ describe('BeersComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ BeersComponent ],
-      providers: [BeerService]
+      providers: [BeerService],
+      imports: [HttpClientModule],
     })
     .compileComponents();
   });

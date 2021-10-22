@@ -6,6 +6,7 @@ import { CalculatorComponent } from './components/calculator/calculator/calculat
 import { FormComponent } from './components/form/form/form.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TrivialComponent } from './components/trivial/trivial/trivial.component';
 import { YourGuard } from './guards/your.guard';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
     { path: 'apod', component: ApodComponent },
     { path: 'beers', component: BeersComponent },
     { path: 'form', component: FormComponent, canActivate: [YourGuard] },
-    { path: '', redirectTo: '/beers', pathMatch: 'full' },
+    { path: 'trivial', component: TrivialComponent },
+    { path: '', redirectTo: '/trivial', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 
 
