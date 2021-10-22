@@ -1,30 +1,10 @@
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-    <li [ngbNavItem]="1">
-      <a ngbNavLink>Calculadora</a>
-      <ng-template ngbNavContent>
-        <app-calculator></app-calculator>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>Héroes</a>
-      <ng-template ngbNavContent>
-        <app-heroes></app-heroes>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="3">
-      <a ngbNavLink>Apod</a>
-      <ng-template ngbNavContent>
-        <app-apod></app-apod>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="4">
-      <a ngbNavLink>Beers</a>
-      <ng-template ngbNavContent>
-        <app-beers></app-beers>
-      </ng-template>
-    </li>
-  </ul>
-  
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+<nav class="nav justify-content-center">
+  <a class="nav-link active" routerLink="/calculator" routerLinkActive="active">Calculadora</a>
+  <a class="nav-link active" routerLink="/heroes" routerLinkActive="active">Héroes</a>
+  <a class="nav-link active" routerLink="/apod" routerLinkActive="active">Apod</a>
+  <a class="nav-link active" routerLink="/beers" routerLinkActive="active">Cervezas</a>
+  <a class="nav-link active" routerLink="/form" routerLinkActive="active">Formulario</a>
+</nav>
 
-
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

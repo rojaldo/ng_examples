@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DateApodComponent } from '../date-apod/date-apod.component';
+import { ShowApodComponent } from '../show-apod/show-apod.component';
 
 import { ApodComponent } from './apod.component';
 
@@ -8,7 +10,7 @@ describe('ApodComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ApodComponent ]
+      declarations: [ ApodComponent, DateApodComponent, ShowApodComponent ]
     })
     .compileComponents();
   });

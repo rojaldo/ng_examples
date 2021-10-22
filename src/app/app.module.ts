@@ -22,6 +22,11 @@ import { DateApodComponent } from './components/apod/date-apod/date-apod.compone
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { BeerService } from './services/beer.service';
 import { AbvPipe } from './pipes/abv.pipe';
+import { FormComponent } from './components/form/form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveComponent } from './components/form/reactive/reactive.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'; // CLI imports AppRoutingModule
 
 @NgModule({
   declarations: [
@@ -36,7 +41,10 @@ import { AbvPipe } from './pipes/abv.pipe';
     ShowApodComponent,
     DateApodComponent,
     BeersComponent,
-    AbvPipe
+    AbvPipe,
+    FormComponent,
+    ReactiveComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,9 @@ import { AbvPipe } from './pipes/abv.pipe';
     HttpClientModule,
     YouTubePlayerModule,
     NgxSliderModule,
+    ReactiveFormsModule,
+    AppRoutingModule
+
   ],
   providers: [CalculatorService, HeroesService, ApodService, BeerService],
   bootstrap: [AppComponent]

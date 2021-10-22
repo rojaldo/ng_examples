@@ -1,22 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BeerService } from 'src/app/services/beer.service';
 
-import { BeersComponent } from './beers.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
-describe('BeersComponent', () => {
-  let component: BeersComponent;
-  let fixture: ComponentFixture<BeersComponent>;
+describe('PageNotFoundComponent', () => {
+  let component: PageNotFoundComponent;
+  let fixture: ComponentFixture<PageNotFoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BeersComponent ],
-      providers: [BeerService]
+      declarations: [ PageNotFoundComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BeersComponent);
+    fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
