@@ -1,8 +1,8 @@
 <div class="container">
-    
+    <span class="badge badge-primary">{{score}}</span>
 <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 mb-3" *ngFor="let card of cards">
-        <app-card [card]="card"></app-card>
+        <app-card [card]="card" (onAnswer)="handleResponse($event)"></app-card>
     </div>
 </div>
 

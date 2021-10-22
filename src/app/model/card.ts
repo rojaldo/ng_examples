@@ -1,8 +1,11 @@
 export class Card {
-    
+
     question = '';
     rightAnswer = '';
     answers: string[] = [];
+    responded = false;
+    correct!: boolean;
+    answer = '';
 
     constructor(json: any) {
         this.question = json.question;

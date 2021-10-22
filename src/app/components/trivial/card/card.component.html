@@ -1,6 +1,6 @@
 <div class="card h-100">
     <div class="card-body">
-        <h4 class="card-title">{{card.question}}</h4>
-        <button type="button" class="btn btn-primary btn-block" *ngFor="let answer of card.answers">{{answer}}</button>
+        <h4 class="card-title" [innerHtml]="card.question"></h4>
+        <button type="button" [class]="classArray[i]" *ngFor="let answer of card.answers; let i=index" (click)="handleAnswer(answer)" [disabled]="this.card.responded" [innerHtml]="answer"></button>
     </div>
 </div>
